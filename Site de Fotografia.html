@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página com Bootstrap</title>
+
+    <!-- Link para o CSS do Bootstrap via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar do Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Pixela</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Galeria</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Paisagens</a>
+                  <a class="dropdown-item" href="#">Retratos</a>
+                  <a class="dropdown-item" href="#">Natureza</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Todas</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar fotos..." aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section(texto que fica a cima do carossel, tipo um convite chamativo) -->
+      <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Compartilhe sua paixão pela fotografia</h1>
+            <p class="lead">Conecte-se com uma comunidade de fotógrafos apaixonados e mostre seu trabalho ao mundo.</p>
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Comece agora</button>
+        </div>
+      </div>
+
+      <!-- Carousel do Bootstrap -->
+      <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner rounded-3">
+          <div class="carousel-item active">
+            <img src="foto_natureza3.jpg" class="d-block w-100" alt="Paisagem">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+              <h5>Paisagens inspiradoras</h5>
+              <p>Explore as mais belas paisagens compartilhadas por nossa comunidade.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="foto_natureza.jpeg" class="d-block w-100" alt="Retrato">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+              <h5>Retratos emocionantes</h5>
+              <p>Descubra a arte de capturar expressões e emoções.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="foto_retrato3.jpg" class="d-block w-100" alt="Natureza">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+              <h5>Beleza natural</h5>
+              <p>Maravilhe-se com a diversidade da vida selvagem.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+
+      <!-- Cards do Bootstrap -->
+      <div class="container mb-5">
+        <h2 class="text-center mb-4">Por que compartilhar suas fotos conosco?</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card h-100 feature-card">
+              <img src="img_card1.jpg" class="card-img-top" alt="Fotografia">
+              <div class="card-body">
+                <h5 class="card-title">Transforme cliques em conexões!</h5>
+                <p class="card-text">Compartilhe suas fotos e se conecte com uma comunidade apaixonada pela fotografia. Inspire outros e ganhe visibilidade ao mostrar o seu talento único através das suas imagens.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-outline-primary">Saiba mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 feature-card">
+              <img src="img_card2.jpg" class="card-img-top" alt="Câmera">
+              <div class="card-body">
+                <h5 class="card-title">Destaque seu olhar único</h5>
+                <p class="card-text">Mostre sua visão única da fotografia para uma comunidade apaixonada por arte. Compartilhe suas imagens e ganhe visibilidade, conectando-se com outros fotógrafos talentosos.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-outline-primary">Saiba mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 feature-card">
+              <img src="img_card3.jpg" class="card-img-top" alt="Natureza">
+              <div class="card-body">
+                <h5 class="card-title">Compartilhe sua paixão!</h5>
+                <p class="card-text">Publique suas fotos e inspire outros a ver o mundo de uma nova forma. Compartilhe seu olhar criativo com quem valoriza a arte da fotografia.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-outline-primary">Saiba mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 feature-card">
+              <img src="img_card4.jpg" class="card-img-top" alt="Arte">
+              <div class="card-body">
+                <h5 class="card-title">Sua arte merece ser vista!</h5>
+                <p class="card-text">Compartilhe suas imagens e inspire outros a explorar o mundo através da sua lente. Mostre o que você captura e ganhe reconhecimento pela sua arte.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-outline-primary">Saiba mais</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulários de Validação do Bootstrap -->
+      <div class="container mb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h2 class="text-center mb-4">Junte-se à nossa comunidade</h2>
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="firstName" required>
+                  <div class="invalid-feedback">
+                    Por favor, insira seu nome.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Sobrenome</label>
+                  <input type="text" class="form-control" id="lastName" required>
+                  <div class="invalid-feedback">
+                    Por favor, insira seu sobrenome.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="email" placeholder="seu@email.com" required>
+                  <div class="invalid-feedback">
+                    Por favor, insira um e-mail válido.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="username" class="form-label">Nome de usuário</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="username" required>
+                    <div class="invalid-feedback">
+                      Escolha um nome de usuário.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="city" class="form-label">Cidade</label>
+                  <input type="text" class="form-control" id="city" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe sua cidade.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="state" class="form-label">Estado</label>
+                  <select class="form-select" id="state" required>
+                    <option value="" selected disabled>Escolha...</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="ES">Espírito Santo</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Por favor, selecione um estado.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">CEP</label>
+                  <input type="text" class="form-control" id="zip" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe seu CEP.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label" for="terms">
+                      Concordo com os termos e condições
+                    </label>
+                    <div class="invalid-feedback">
+                      Você deve concordar antes de enviar.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button class="btn btn-primary px-4" type="submit">Cadastrar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid do Bootstrap -->
+      <div class="container mb-5">
+        <h2 class="text-center mb-4">Nossos recursos</h2>
+        <div class="row align-items-center mb-4">
+          <div class="col-md-6">
+            <img src="img_fim1-2.jpg" class="img-fluid rounded" alt="Galeria">
+          </div>
+          <div class="col-md-6">
+            <h3>Galeria Personalizada</h3>
+            <p>Exiba suas fotos em uma galeria elegante e personalizável. Organize seus trabalhos por categorias, projetos ou temas.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Layouts responsivos</li>
+              <li class="list-group-item">Filtros por tags</li>
+              <li class="list-group-item">Modo de exibição em tela cheia</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center flex-md-row-reverse">
+          <div class="col-md-6">
+            <img src="img_fim2.jpg" class="img-fluid rounded" alt="Comunidade">
+          </div>
+          <div class="col-md-6">
+            <h3>Comunidade Ativa</h3>
+            <p>Conecte-se com outros fotógrafos, receba feedback construtivo e participe de desafios e competições mensais.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Sistema de comentários</li>
+              <li class="list-group-item">Fóruns de discussão</li>
+              <li class="list-group-item">Eventos e workshops</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer do Bootstrap -->
+      <footer class="bg-dark text-white pt-4 pb-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <h5>Pixela</h5>
+              <p>A plataforma para fotógrafos compartilharem seu trabalho e se conectarem com uma comunidade apaixonada.</p>
+              <div class="social-links">
+                <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-pinterest"></i></a>
+              </div>
+            </div>
+            <div class="col-md-2 mb-3">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Home</a></li>
+                <li><a href="#" class="text-white">Galeria</a></li>
+                <li><a href="#" class="text-white">Categorias</a></li>
+                <li><a href="#" class="text-white">Sobre</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 mb-3">
+              <h5>Categorias</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Paisagens</a></li>
+                <li><a href="#" class="text-white">Retratos</a></li>
+                <li><a href="#" class="text-white">Natureza</a></li>
+                <li><a href="#" class="text-white">Urbana</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 mb-3">
+              <h5>Newsletter</h5>
+              <p>Inscreva-se para receber novidades e dicas de fotografia.</p>
+              <form>
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control" placeholder="Seu e-mail" aria-label="Seu e-mail">
+                  <button class="btn btn-primary" type="button">Inscrever</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2023 FotoShare. Todos os direitos reservados.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <a href="#" class="text-white me-2">Termos de uso</a>
+              <a href="#" class="text-white me-2">Política de privacidade</a>
+              <a href="#" class="text-white">Contato</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modal do Bootstrap -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pronto para começar?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Junte-se à nossa comunidade de fotógrafos e compartilhe suas melhores imagens!</p>
+              <p>Com uma conta gratuita você pode:</p>
+              <ul>
+                <li>Compartilhar até 100 fotos</li>
+                <li>Receber feedback da comunidade</li>
+                <li>Participar de desafios mensais</li>
+                <li>Acessar tutoriais exclusivos</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mais tarde</button>
+              <button type="button" class="btn btn-primary">Criar conta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Scripts do Bootstrap e jQuery via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Exemplo de validação de formulário.
+      (function() {
+        'use strict';
+        
+        // Buscar todos os formulários para personalizar
+        var forms = document.querySelectorAll('.needs-validation');
+        
+        // Loop sobre eles e prevenir envio
+        Array.prototype.slice.call(forms)
+          .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              
+              form.classList.add('was-validated');
+            }, false);
+          });
+      })();
+      
+      // Ativar tooltips (função que dá um breve legenda sobre icone se o mouse passar por cima)
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    </script>
+
+</body>
+</html>
